@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("onBoarding") var onBoardingIsActive : Bool = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if onBoardingIsActive {
+            OnBoardingView()
+        } else {
+            HomeView()
+        }
     }
 }
 
